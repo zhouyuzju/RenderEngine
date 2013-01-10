@@ -4,7 +4,7 @@
 A multi-thread and real-time rendering engine for rendering local web pages.
 Based on swt ie browser and log4j and it's a windows based plateform, 
 if you want to move it to the linux or mac plateform,
-according to http://www.eclipse.org/swt/faq.php#howusewebkit.
+according to <a href="http://www.eclipse.org/swt/faq.php#howusewebkit">http://www.eclipse.org/swt/faq.php#howusewebkit</a>.
 
 Usage:
   RenderController controller = new RenderController();
