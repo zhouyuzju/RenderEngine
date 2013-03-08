@@ -7,6 +7,7 @@ import org.eclipse.swt.SWT;
 import org.eclipse.swt.browser.Browser;
 import org.eclipse.swt.browser.ProgressEvent;
 import org.eclipse.swt.browser.ProgressListener;
+import org.eclipse.swt.layout.FillLayout;
 import org.eclipse.swt.widgets.Display;
 import org.eclipse.swt.widgets.Shell;
 
@@ -98,14 +99,15 @@ public class RenderThread extends Thread {
 		try {
 
 			/*
-			 * Construct the WEBKIT browser based on SWT and add rendering
+			 * Construct the IE browser based on SWT and add rendering
 			 * completed event. If current rendering task completed, set
 			 * renderFinished true.
 			 */
 			display = new Display();
 			shell = new Shell(display);
+//			shell.setLayout(new FillLayout());  in case of show the page
 			browser = new Browser(shell, SWT.NONE);
-
+			
 			/*
 			 * add rendering completed and changed event listener
 			 */
@@ -148,7 +150,7 @@ public class RenderThread extends Thread {
 					path = urlList.get(i).split("\t")[0];
 					// url = line.split("\t")[1];
 					browser.setUrl(new File(path).getAbsolutePath());
-
+//				shell.open();	in case of show the page
 					/*
 					 * wait until the current rendering page completed, then go
 					 * on rendering anther one
